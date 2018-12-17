@@ -2,7 +2,9 @@ package se.frost.ardemo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.widget.Toast
+import se.frost.ardemo.hellosceneform.HelloSceneformFragment
 
 class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionListener {
 
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     //// MainFragmentInteractionListener
     ////
 
-    override fun onButton1Click() {
-        showToast("1")
+    override fun onHelloSceneFormButtonClick() {
+        addFragment(HelloSceneformFragment())
     }
 
     override fun onButton2Click() {
@@ -56,11 +58,24 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     ////
 
     private fun initMainFragment() {
+        replaceFragment(MainFragment())
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.contentFrame, MainFragment())
+            .replace(R.id.contentFrame, fragment)
             .commit()
     }
+
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.contentFrame, fragment)
+            .addToBackStack(fragment.javaClass.name)
+            .commit()
+    }
+
 
     private fun showToast(message: String) {
         Toast.makeText(this, "Button clicked: $message", Toast.LENGTH_SHORT).show()
