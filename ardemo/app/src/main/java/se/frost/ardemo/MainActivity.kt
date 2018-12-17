@@ -3,12 +3,14 @@ package se.frost.ardemo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.ar.sceneform.ux.ArFragment
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initArFragment()
     }
 
     override fun onResume() {
@@ -28,5 +30,12 @@ class MainActivity : AppCompatActivity() {
             }
             finish()
         }
+    }
+
+    private fun initArFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.contentFrame, ArFragment())
+            .commit()
     }
 }
