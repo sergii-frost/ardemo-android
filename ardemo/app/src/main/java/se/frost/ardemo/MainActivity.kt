@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +31,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    ////
+    //// MainFragmentInteractionListener
+    ////
+
+    override fun onButton1Click() {
+        showToast("1")
+    }
+
+    override fun onButton2Click() {
+        showToast("2")
+    }
+
+    override fun onButton3Click() {
+        showToast("3")
+    }
+
+    override fun onButton4Click() {
+        showToast("4")
+    }
+
+    ////
+    //// Private methods
+    ////
+
     private fun initMainFragment() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.contentFrame, MainFragment())
             .commit()
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, "Button clicked: $message", Toast.LENGTH_SHORT).show()
     }
 }

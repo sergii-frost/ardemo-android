@@ -1,14 +1,24 @@
 package se.frost.ardemo
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment: Fragment() {
+
+    interface MainFragmentInteractionListener {
+
+        fun onButton1Click()
+        fun onButton2Click()
+        fun onButton3Click()
+        fun onButton4Click()
+    }
+
+    var listener: MainFragmentInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -19,14 +29,20 @@ class MainFragment: Fragment() {
         initButtons()
     }
 
-    private fun initButtons() {
-        arDemoButton1.setOnClickListener { showToast(arDemoButton1.text.toString()) }
-        arDemoButton2.setOnClickListener { showToast(arDemoButton2.text.toString()) }
-        arDemoButton3.setOnClickListener { showToast(arDemoButton3.text.toString()) }
-        arDemoButton4.setOnClickListener { showToast(arDemoButton4.text.toString()) }
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        listener = context as? MainFragmentInteractionListener
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(context, "Button clicked: $message", Toast.LENGTH_SHORT).show()
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+    }
+
+    private fun initButtons() {
+        arDemoButton1.setOnClickListener { listener?.onButton1Click() }
+        arDemoButton2.setOnClickListener { listener?.onButton2Click() }
+        arDemoButton3.setOnClickListener { listener?.onButton3Click() }
+        arDemoButton4.setOnClickListener { listener?.onButton4Click() }
     }
 }
