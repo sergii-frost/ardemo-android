@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/ingress_blue</color>
+    <color name="colorPrimaryDark">@color/ingress_dark_blue</color>
+    <color name="colorAccent">@color/hacker_green</color>
+
+    <color name="darcula">#282A36</color>
+
+    <color name="hacker_green">#20C20E</color>
+    <color name="hacker_green_pressed">#2E7D32</color>
+
+    <color name="ingress_blue">#00C2FF</color>
+    <color name="ingress_blue_pressed">#0277BD</color>
+
+    <color name="ingress_dark_blue">#0078B5</color>
+    <color name="ingress_dark_blue_pressed">#01579b</color>
+
+    <color name="ingress_green">#28F428</color>
+    <color name="ingress_green_pressed">#388E3C</color>
+
+    <color name="ingress_yellow">#FECE5A</color>
+    <color name="ingress_yellow_pressed">#FFA630</color>
+
 </resources>
