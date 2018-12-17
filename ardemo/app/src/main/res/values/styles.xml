@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="HackerGreenButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/selector_button_hacker_green</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="IngressBlueButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/selector_button_ingress_blue</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="IngressDarkBlueButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/selector_button_ingress_dark_blue</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="IngressGreenButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/selector_button_ingress_green</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="IngressYellowButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/selector_button_ingress_yellow</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
