@@ -12,13 +12,13 @@ class MainFragment: Fragment() {
 
     interface MainFragmentInteractionListener {
 
-        fun onButton1Click()
+        fun onHelloSceneFormButtonClick()
         fun onButton2Click()
         fun onButton3Click()
         fun onButton4Click()
     }
 
-    var listener: MainFragmentInteractionListener? = null
+    private var listener: MainFragmentInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -40,7 +40,7 @@ class MainFragment: Fragment() {
     }
 
     private fun initButtons() {
-        arDemoButton1.setOnClickListener { listener?.onButton1Click() }
+        helloSceneformButton.setOnClickListener { listener?.onHelloSceneFormButtonClick() }
         arDemoButton2.setOnClickListener { listener?.onButton2Click() }
         arDemoButton3.setOnClickListener { listener?.onButton3Click() }
         arDemoButton4.setOnClickListener { listener?.onButton4Click() }
