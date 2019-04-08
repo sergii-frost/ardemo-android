@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.widget.Toast
 import se.frost.ardemo.hellosceneform.HelloSceneformFragment
+import se.frost.ardemo.solar.SolarSystemArFragment
 
 class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionListener {
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     }
 
     override fun onButton2Click() {
-        showToast("2")
+        addFragment(SolarSystemArFragment())
     }
 
     override fun onButton3Click() {

@@ -2,4 +2,5 @@
     <string name="app_name">ARDemo</string>
     <string name="camera_permission">Camera permission is needed to run this application</string>
     <string name="button_hello_sceneform">Hello Sceneform</string>
+    <string name="button_solar_system">Solar System</string>
 </resources>
